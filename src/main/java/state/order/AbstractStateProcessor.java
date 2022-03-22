@@ -10,7 +10,7 @@ import state.order.inter.StateProcessor;
  */
 public abstract class AbstractStateProcessor<T, C> implements StateProcessor<T, C>, StateActionStep<T, C> {
     @Override
-    public final ServiceResult<T> action(StateContext<C> context) throws Exception {
+    public final ServiceResult<T> action(state.order.StateContext<C> context) throws Exception {
         ServiceResult<T> result = null;
         try {
             // 数据准备
@@ -39,5 +39,7 @@ public abstract class AbstractStateProcessor<T, C> implements StateProcessor<T, 
             throw e;
         }
     }
+
+    public abstract void doProcess();
 
 }

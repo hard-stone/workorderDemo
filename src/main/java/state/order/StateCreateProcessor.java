@@ -35,4 +35,9 @@ public class StateCreateProcessor extends AbstractStateProcessor<String,CreateOr
     public void after(StateContext<CreateOrderContext> context) {
 
     }
+
+    @Override
+    public void doProcess() {
+
+    }
 }

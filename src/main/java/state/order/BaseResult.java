@@ -1,10 +1,12 @@
 package state.order;
 
 /**
- * @author renbin
- * @date 2022年03月16日 18:40
+ * @Author renbin
+ * @Description
+ * @Date 2022/3/14 21:42
  */
-public class ServiceResult<T> {
+public class BaseResult<T> {
+
     public boolean isSuccess() {
         return true;
     }
