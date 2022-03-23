@@ -1,7 +1,6 @@
 package state.order.process;
 
 import lombok.Data;
-import state.order.node.WorkOrderInfo;
 
 import java.util.List;
 
@@ -12,8 +11,6 @@ import java.util.List;
 @Data
 public class ProcessInfo {
 
-    private String processName;
-    private String customName;
-    private List<WorkOrderInfo> workOrderInfos;
+
 
 }

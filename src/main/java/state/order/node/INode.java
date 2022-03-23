@@ -7,7 +7,8 @@ package state.order.node;
 
 public interface INode<T> {
 
-
+    T getElement();
+    void setElement(T data);
 
 
 }
