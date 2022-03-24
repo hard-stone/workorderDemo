@@ -16,6 +16,9 @@ public class OrderProcess extends AbsOrderProcess{
     //删除串行简单节点
     //插入并行节点
     //删除并行节点
+
+    //插入右节点
+
     private RootNode rootNode;//储存根节点
 
     public RootNode getRootNode() {
@@ -74,6 +77,18 @@ public class OrderProcess extends AbsOrderProcess{
         return node;
     }
 
+    /**
+     * 查找指定节点的层级上级节点
+     * @param nodeId
+     * @return
+     */
+    private AbsNode<String> selectAssignNodeParentNode(String nodeId) throws Exception {
+
+        return null;
+    }
+
+
+
     private AbsNode<String> recursionPreNode(AbsNode<String> node, String nodeId) {
         if (node.getFirstChildNode()!=null){//TODO hasNext
             if (node.getFirstChildNode().getNodeId().equals(nodeId)){
@@ -129,6 +144,7 @@ public class OrderProcess extends AbsOrderProcess{
 
     @Override
     public BaseResult<String> create(ProcessInfo processInfos) {
+
         return null;
     }
 
@@ -138,7 +154,7 @@ public class OrderProcess extends AbsOrderProcess{
     }
 
     /**
-     * 转派-插入节点
+     * 转派-插入节点，本质是替换当前节点为另外一个节点，这里注意如果先加签，再转派，也只会在复杂节点下替换，复杂节点通过后才会往后执行
      * @param operaNode
      * @param assignTo
      * @return
@@ -162,13 +178,38 @@ public class OrderProcess extends AbsOrderProcess{
     }
 
     /**
-     * 加签 任一节点通过则通过
+     * 加签 任一节点通过则通过，如果有父节点且为复杂节点-加签节点，则右边插入一个，否则新建一个加签复杂节点替换当期节点
      * @return
      */
     public Boolean addSign(SimpleNode operaNode,SimpleNode addSigner){
-//        new ComplexNode();
+        /*
+         if(父节点是加签复杂节点){ TODO 查找当前层级父节点的方法
+            TODO 插入右节点
+         }else if{
+            替换当前节点为复杂节点，关联关系
+         }
+        * */
+        //新建复杂节点，替换原节点的左节点/父节点的右节点
         return true;
     }
+
+    /**
+     * 会签 全部节点通过则通过，如果有父节点且为复杂节点-会签节点，则右边插入一个，否则新建一个加签复杂节点替换当期节点
+     * @return
+     */
+    public Boolean addCounterSign(SimpleNode operaNode,SimpleNode addSigner){
+        /*
+         if(父节点是会签复杂节点){ TODO 查找当前层级父节点的方法
+            TODO 插入右节点
+         }else if{
+            替换当前节点为复杂节点，关联关系
+         }
+        * */
+        //新建复杂节点，替换原节点的左节点/父节点的右节点
+        return true;
+    }
+
+
 
 
 }

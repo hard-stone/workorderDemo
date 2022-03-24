@@ -1,2 +1,10 @@
 # Default ignored files
 /workspace.xml
+compiler.xml
+encodings.xml
+misc.xml
+modules.xml
+workorderDemo.iml
+workspace.xml
+./libraries
+../lib
